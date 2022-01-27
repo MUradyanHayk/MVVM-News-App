@@ -13,8 +13,12 @@ class NewsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
-        updateFragment(BreakingNewsFragment())
 
+        updateFragment(BreakingNewsFragment())
+        initBottomView()
+    }
+
+    private fun initBottomView() {
         bottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigationView?.setOnItemSelectedListener { item ->
             when (item.itemId) {
