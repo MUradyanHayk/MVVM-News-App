@@ -3,16 +3,27 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.myapplication.db.ArticleDatabase
 import com.example.myapplication.fragment.BreakingNewsFragment
 import com.example.myapplication.fragment.SavedNewsFragment
 import com.example.myapplication.fragment.SearchNewsFragment
+import com.example.myapplication.repository.NewsRepository
+import com.example.myapplication.viewModel.NewsViewModel
+import com.example.myapplication.viewModel.NewsViewModelProviderFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NewsActivity : AppCompatActivity() {
     private var bottomNavigationView: BottomNavigationView? = null
+    lateinit var viewModel: NewsViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
+
+        val repository = NewsRepository(ArticleDatabase(this))
+//        val viewModeProviderFactory = NewsViewModelProviderFactory(repository)
+//        viewModel = ViewModelProvider(this, viewModeProviderFactory)[NewsViewModel::class.java]
+        viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
         updateFragment(BreakingNewsFragment())
         initBottomView()
