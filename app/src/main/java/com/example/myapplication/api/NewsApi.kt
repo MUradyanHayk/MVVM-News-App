@@ -1,6 +1,6 @@
 package com.example.myapplication.api
 
-import com.example.myapplication.NewsResponse
+import com.example.myapplication.data.NewsResponse
 import com.example.myapplication.utils.Constants
 import retrofit2.Response
 import retrofit2.http.GET

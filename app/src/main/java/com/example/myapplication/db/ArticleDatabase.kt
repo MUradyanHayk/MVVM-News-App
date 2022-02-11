@@ -2,7 +2,7 @@ package com.example.myapplication.db
 
 import android.content.Context
 import androidx.room.*
-import com.example.myapplication.Article
+import com.example.myapplication.data.Article
 import com.example.myapplication.utils.Constants
 
 @Database(entities = [Article::class], version = Constants.DATABASE_VERSION)
