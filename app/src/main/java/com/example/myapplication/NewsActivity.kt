@@ -21,9 +21,9 @@ class NewsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_news)
 
         val repository = NewsRepository(ArticleDatabase(this))
-//        val viewModeProviderFactory = NewsViewModelProviderFactory(repository)
-//        viewModel = ViewModelProvider(this, viewModeProviderFactory)[NewsViewModel::class.java]
-        viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
+        val viewModeProviderFactory = NewsViewModelProviderFactory(repository)
+        viewModel = ViewModelProvider(this, viewModeProviderFactory)[NewsViewModel::class.java]
+//        viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
         updateFragment(BreakingNewsFragment())
         initBottomView()

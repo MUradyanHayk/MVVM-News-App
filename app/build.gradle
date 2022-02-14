@@ -44,7 +44,7 @@ dependencies {
 
 
     // Architecture Components
-    def lifecycle_version = "2.4.0"
+    def lifecycle_version = "2.4.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
     // Room
@@ -52,6 +52,7 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
